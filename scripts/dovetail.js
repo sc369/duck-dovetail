@@ -54,7 +54,10 @@ for (button of allButtons) {
 
             // Only if something was found, add the object to the
             // shopping cart array
-            if (foundProduct !== null) {
+            if (foundProduct !== null && 
+                shoppingCart.includes(foundProduct[name]) === "false" 
+               
+                ) {
                 shoppingCart.push(foundProduct)
                 displayShoppingCart()
             }
