@@ -11,12 +11,19 @@ const createProductHTML = product => `
       <p class="product__description">
         ${product.description}
       </p>
+     
+      <p class="product__quantity">
+        
+      </p>
+
+      <p class="product__quantity">
+        </p>
 
       <footer class="product__footer">
         Price: ${product.price.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD"
-        })}
+    style: "currency",
+    currency: "USD"
+})}
 
         <button id="${product.id}" class="product__purchaseButton">Purchase</button>
       </footer>
@@ -54,25 +61,34 @@ for (button of allButtons) {
 
             // Only if something was found, add the object to the
             // shopping cart array
-            if (foundProduct !== null && 
-                shoppingCart.includes(foundProduct[name]) === "false" 
-               
-                ) {
+                     
+           // shoppingCart.filter(function (cartItem) {
+             //   return cartItem.id === parseInt(event.target.id)
+               // })
+                           
+            if (foundProduct !== null && shoppingCart.includes(foundProduct) === false) {
                 shoppingCart.push(foundProduct)
+                foundProduct["quantity"] = 1
+                displayShoppingCart()
+
+            } else if (foundProduct !== null) {
+                foundProduct["quantity"]++
                 displayShoppingCart()
             }
+            
 
-        }
-    )
+
+        });
+
+
+
+
+    //if (shoppingCart[0].hasOwnProperty("quantity") === false) {
+
+
+
 
 }
-
-
-
-
-
-
-
 
 
 
