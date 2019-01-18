@@ -12,13 +12,6 @@ const createProductHTML = product => `
         ${product.description}
       </p>
      
-      <p class="product__quantity">
-        
-      </p>
-
-      <p class="product__quantity">
-        </p>
-
       <footer class="product__footer">
         Price: ${product.price.toLocaleString("en-US", {
     style: "currency",
@@ -30,9 +23,6 @@ const createProductHTML = product => `
 
     </section>
 `
-
-
-
 // Iterate all products
 for (product of products) {
     // Create HTML representation
