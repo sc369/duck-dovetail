@@ -12,6 +12,7 @@ const displayShoppingCart = () => {
         `
         <section class="shoppingCart__item">
         <div>${product.name}</div>
+        <div>${product.quantity}</div>
         <div>${product.price.toLocaleString("en-US", {
             style: "currency",
             currency: "USD"
@@ -21,7 +22,7 @@ const displayShoppingCart = () => {
         </section>
         `
 
-        grandTotal += product.price
+        grandTotal += product.price * product.quantity
     })
 
     cartEl.innerHTML += `

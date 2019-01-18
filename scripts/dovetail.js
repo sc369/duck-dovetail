@@ -59,17 +59,17 @@ for (button of allButtons) {
                 return parseInt(event.target.id) === product.id
             })
 
-            // Only if something was found, add the object to the
+            // Only if something was found, and if the product is not 
+            //already in the shopping cart, add the product to the
             // shopping cart array
                      
-           // shoppingCart.filter(function (cartItem) {
-             //   return cartItem.id === parseInt(event.target.id)
-               // })
-                           
+                                   
             if (foundProduct !== null && shoppingCart.includes(foundProduct) === false) {
                 shoppingCart.push(foundProduct)
                 foundProduct["quantity"] = 1
                 displayShoppingCart()
+
+                //If the product is already in the shopping cart, increment the quantity. 
 
             } else if (foundProduct !== null) {
                 foundProduct["quantity"]++
@@ -83,14 +83,18 @@ for (button of allButtons) {
 
 
 
-    //if (shoppingCart[0].hasOwnProperty("quantity") === false) {
+    
 
 
 
 
 }
 
+  //if (shoppingCart[0].hasOwnProperty("quantity") === false) {
 
+           // shoppingCart.filter(function (cartItem) {
+             //   return cartItem.id === parseInt(event.target.id)
+               // })
 
 
 
